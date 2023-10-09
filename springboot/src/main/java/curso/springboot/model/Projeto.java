@@ -1,125 +1,146 @@
 package curso.springboot.model;
+
 import java.math.BigDecimal;
 import java.util.Date;
-
+import java.util.List;
+import javax.persistence.CascadeType;
 import javax.persistence.Entity;
 import javax.persistence.EnumType;
 import javax.persistence.Enumerated;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.JoinColumn;
+import javax.persistence.JoinTable;
+import javax.persistence.ManyToMany;
+import javax.persistence.OneToMany;
 import javax.persistence.Temporal;
 import javax.persistence.TemporalType;
 import javax.validation.constraints.NotEmpty;
 import javax.validation.constraints.NotNull;
-
 import org.springframework.format.annotation.DateTimeFormat;
 
 @Entity
 public class Projeto {
 
-    @Id
-    @GeneratedValue(strategy = GenerationType.AUTO)
-    private Long id;
+  @Id
+  @GeneratedValue(strategy = GenerationType.AUTO)
+  private Long id;
 
-    @NotEmpty(message = "Nome não pode ser vazio")
-    @NotNull(message = "Nome não pode ser nulo")
-    private String nome;
+  @NotEmpty(message = "Nome não pode ser vazio")
+  @NotNull(message = "Nome não pode ser nulo")
+  private String nome;
 
-    @DateTimeFormat(pattern = "yyyy-MM-dd")
-    @Temporal(TemporalType.DATE)
-    private Date dataInicio;
+  @DateTimeFormat(pattern = "yyyy-MM-dd")
+  @Temporal(TemporalType.DATE)
+  private Date dataInicio;
 
-    private String gerenteResponsavel;
+  private String gerenteResponsavel;
 
-    @DateTimeFormat(pattern = "yyyy-MM-dd")
-    @Temporal(TemporalType.DATE)
-    private Date previsaoTermino;
+  @DateTimeFormat(pattern = "yyyy-MM-dd")
+  @Temporal(TemporalType.DATE)
+  private Date previsaoTermino;
 
-    @DateTimeFormat(pattern = "yyyy-MM-dd")
-    @Temporal(TemporalType.DATE)
-    private Date dataRealTermino;
+  @DateTimeFormat(pattern = "yyyy-MM-dd")
+  @Temporal(TemporalType.DATE)
+  private Date dataRealTermino;
 
-    private BigDecimal orcamentoTotal;
-    private String descricao;
+  private BigDecimal orcamentoTotal;
+  private String descricao;
 
-    @Enumerated(EnumType.STRING)
-    private StatusProjeto status;
+  @Enumerated(EnumType.STRING)
+  private StatusProjeto status;
 
-    @Enumerated(EnumType.STRING)
-    private ClassificacaoRisco classificacaoRisco;
-    
-    // Getters e Setters
+  @Enumerated(EnumType.STRING)
+  private ClassificacaoRisco classificacaoRisco;
 
-    public Long getId() {
-        return id;
-    }
+  @ManyToMany
+  @JoinTable(
+    name = "projeto_membro",
+    joinColumns = @JoinColumn(name = "projeto_id"),
+    inverseJoinColumns = @JoinColumn(name = "membro_id")
+  )
+  private List<Membro> membros;
 
-    public void setId(Long id) {
-        this.id = id;
-    }
+  // Getters e Setters
 
-    public String getNome() {
-        return nome;
-    }
+  public Long getId() {
+    return id;
+  }
 
-    public void setNome(String nome) {
-        this.nome = nome;
-    }
+  public void setId(Long id) {
+    this.id = id;
+  }
 
-    public Date getDataInicio() {
-        return dataInicio;
-    }
+  public String getNome() {
+    return nome;
+  }
 
-    public void setDataInicio(Date dataInicio) {
-        this.dataInicio = dataInicio;
-    }
+  public void setNome(String nome) {
+    this.nome = nome;
+  }
 
-    public String getGerenteResponsavel() {
-        return gerenteResponsavel;
-    }
+  public Date getDataInicio() {
+    return dataInicio;
+  }
 
-    public void setGerenteResponsavel(String gerenteResponsavel) {
-        this.gerenteResponsavel = gerenteResponsavel;
-    }
+  public void setDataInicio(Date dataInicio) {
+    this.dataInicio = dataInicio;
+  }
 
-    public Date getPrevisaoTermino() {
-        return previsaoTermino;
-    }
+  public String getGerenteResponsavel() {
+    return gerenteResponsavel;
+  }
 
-    public void setPrevisaoTermino(Date previsaoTermino) {
-        this.previsaoTermino = previsaoTermino;
-    }
+  public void setGerenteResponsavel(String gerenteResponsavel) {
+    this.gerenteResponsavel = gerenteResponsavel;
+  }
 
-    public Date getDataRealTermino() {
-        return dataRealTermino;
-    }
+  public Date getPrevisaoTermino() {
+    return previsaoTermino;
+  }
 
-    public void setDataRealTermino(Date dataRealTermino) {
-        this.dataRealTermino = dataRealTermino;
-    }
+  public void setPrevisaoTermino(Date previsaoTermino) {
+    this.previsaoTermino = previsaoTermino;
+  }
 
-    public BigDecimal getOrcamentoTotal() {
-        return orcamentoTotal;
-    }
+  public Date getDataRealTermino() {
+    return dataRealTermino;
+  }
 
-    public void setOrcamentoTotal(BigDecimal orcamentoTotal) {
-        this.orcamentoTotal = orcamentoTotal;
-    }
+  public void setDataRealTermino(Date dataRealTermino) {
+    this.dataRealTermino = dataRealTermino;
+  }
 
-    public String getDescricao() {
-        return descricao;
-    }
+  public BigDecimal getOrcamentoTotal() {
+    return orcamentoTotal;
+  }
 
-    public void setDescricao(String descricao) {
-        this.descricao = descricao;
-    }
+  public void setOrcamentoTotal(BigDecimal orcamentoTotal) {
+    this.orcamentoTotal = orcamentoTotal;
+  }
 
-    public StatusProjeto getStatus() {
-        return status;
-    }
+  public String getDescricao() {
+    return descricao;
+  }
 
-    public void setStatus(StatusProjeto status) {
-        this.status = status;
-    }
+  public void setDescricao(String descricao) {
+    this.descricao = descricao;
+  }
+
+  public StatusProjeto getStatus() {
+    return status;
+  }
+
+  public void setStatus(StatusProjeto status) {
+    this.status = status;
+  }
+
+  public void getMembros(List<Membro> membros) {
+    this.membros = membros;
+  }
+
+  public List<Membro> getMembros() {
+    return membros;
+  }
 }
