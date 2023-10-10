@@ -1,4 +1,4 @@
-package com.br.crm.security;
+package com.br.crm.security.auth;
 
 import com.br.crm.model.auth.Usuario;
 import com.br.crm.repository.auth.UsuarioRepository;

@@ -1,4 +1,4 @@
-package  com.br.crm.security;
+package  com.br.crm.security.auth;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.annotation.Configuration;
