@@ -1,9 +1,10 @@
 package com.br.crm.model;
 
+import com.br.crm.model.enums.ClassificacaoRisco;
+import com.br.crm.model.enums.StatusProjeto;
 import java.math.BigDecimal;
 import java.util.Date;
 import java.util.List;
-import javax.persistence.CascadeType;
 import javax.persistence.Entity;
 import javax.persistence.EnumType;
 import javax.persistence.Enumerated;
@@ -13,15 +14,11 @@ import javax.persistence.Id;
 import javax.persistence.JoinColumn;
 import javax.persistence.JoinTable;
 import javax.persistence.ManyToMany;
-import javax.persistence.OneToMany;
 import javax.persistence.Temporal;
 import javax.persistence.TemporalType;
 import javax.validation.constraints.NotEmpty;
 import javax.validation.constraints.NotNull;
 import org.springframework.format.annotation.DateTimeFormat;
-
-import com.br.crm.model.enums.ClassificacaoRisco;
-import com.br.crm.model.enums.StatusProjeto;
 
 @Entity
 public class Projeto {

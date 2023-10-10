@@ -7,6 +7,4 @@ import org.springframework.transaction.annotation.Transactional;
 
 @Repository
 @Transactional
-public interface ProjetoRepository extends JpaRepository<Projeto, Long> {
-  // Implementar consultas personalizadas, se necessário
-}
+public interface ProjetoRepository extends JpaRepository<Projeto, Long> {}
