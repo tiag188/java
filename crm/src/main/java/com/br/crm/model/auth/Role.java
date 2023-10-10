@@ -1,4 +1,4 @@
-package com.br.crm.model;
+package com.br.crm.model.auth;
 
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;

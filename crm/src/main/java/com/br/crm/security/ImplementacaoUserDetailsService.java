@@ -1,7 +1,8 @@
 package com.br.crm.security;
 
-import com.br.crm.model.Usuario;
-import com.br.crm.repository.UsuarioRepository;
+import com.br.crm.model.auth.Usuario;
+import com.br.crm.repository.auth.UsuarioRepository;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.core.userdetails.User;
 import org.springframework.security.core.userdetails.UserDetails;

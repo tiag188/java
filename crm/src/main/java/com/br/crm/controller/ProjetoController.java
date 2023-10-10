@@ -1,9 +1,9 @@
 package com.br.crm.controller;
 
-import com.br.crm.model.ClassificacaoRisco;
 import com.br.crm.model.Membro;
 import com.br.crm.model.Projeto;
-import com.br.crm.model.StatusProjeto;
+import com.br.crm.model.enums.ClassificacaoRisco;
+import com.br.crm.model.enums.StatusProjeto;
 import com.br.crm.repository.MembroRepository;
 import com.br.crm.repository.ProjetoRepository;
 import java.util.List;

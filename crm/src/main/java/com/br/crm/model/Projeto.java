@@ -20,6 +20,9 @@ import javax.validation.constraints.NotEmpty;
 import javax.validation.constraints.NotNull;
 import org.springframework.format.annotation.DateTimeFormat;
 
+import com.br.crm.model.enums.ClassificacaoRisco;
+import com.br.crm.model.enums.StatusProjeto;
+
 @Entity
 public class Projeto {
 

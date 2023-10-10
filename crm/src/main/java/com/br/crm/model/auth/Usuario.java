@@ -1,4 +1,4 @@
-package com.br.crm.model;
+package com.br.crm.model.auth;
 
 import java.util.Collection;
 import java.util.List;

@@ -1,11 +1,11 @@
-package com.br.crm.repository;
+package com.br.crm.repository.auth;
 
 import org.springframework.data.jpa.repository.Query;
 import org.springframework.data.repository.CrudRepository;
 import org.springframework.stereotype.Repository;
 import org.springframework.transaction.annotation.Transactional;
 
-import com.br.crm.model.Usuario;
+import com.br.crm.model.auth.Usuario;
 
 @Repository
 @Transactional

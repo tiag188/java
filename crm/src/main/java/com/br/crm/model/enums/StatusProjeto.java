@@ -1,4 +1,4 @@
-package com.br.crm.model;
+package com.br.crm.model.enums;
 
 public enum StatusProjeto {
   EM_ANALISE,
