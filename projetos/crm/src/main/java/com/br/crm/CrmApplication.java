@@ -13,7 +13,7 @@ import org.springframework.web.servlet.config.annotation.WebMvcConfigurer;
 
 @SpringBootApplication
 @EntityScan(basePackages = { "com.br.crm.model" })
-@ComponentScan(basePackages = { "curso.*" })
+@ComponentScan(basePackages = { "com.*" }) //necessário para realizar o get na rota e redenrizar o html
 @EnableJpaRepositories(basePackages = { "com.br.crm.repository" })
 @EnableTransactionManagement
 @EnableWebMvc
