@@ -40,10 +40,10 @@ public class WebConfigSecurity extends WebSecurityConfigurerAdapter {
 		auth.userDetailsService(implementacaoUserDetailsService)
 		.passwordEncoder(new BCryptPasswordEncoder());
 		
-//		auth.inMemoryAuthentication().passwordEncoder(new BCryptPasswordEncoder())
-//		.withUser("luan")
-//		.password("$2a$10$U4hYraO2UaF83/AgdxGe8eIApnhc8GYP4FDHsc2x8WXv79jIX7bMS")
-//		.roles("ADMIN");
+	//		auth.inMemoryAuthentication().passwordEncoder(new BCryptPasswordEncoder())
+	//		.withUser("tiag")
+	//		.password("$2a$10$U4hYraO2UaF83/AgdxGe8eIApnhc8GYP4FDHsc2x8WXv79jIX7bMS")
+	//		.roles("ADMIN");
 	}
 	
 	@Override // Ignora URL especificas
